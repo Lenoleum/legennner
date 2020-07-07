@@ -2,7 +2,7 @@
 ![](1.PNG)
 
 
-
+```
 !
 version 12.3
 no service pad
@@ -16,3 +16,4 @@ boot-start-marker
 boot-end-marker
 !
 enable password cisco123
+```
