@@ -37,7 +37,7 @@
 #### Проверка.
 
 
-[результат теста](test-exe.txt)
+[результат теста](test-eve.txt)
 
 Ping from PC-A to its default gateway.
 ```
