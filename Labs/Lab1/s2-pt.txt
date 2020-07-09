@@ -1,0 +1,210 @@
+ 
+S2#sh run
+Building configuration...
+
+Current configuration : 3428 bytes
+!
+version 12.2
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+service password-encryption
+!
+hostname S2
+!
+enable secret 5 $1$mERr$9cTjUIEqNGurQiFU.ZeCi1
+!
+!
+!
+no ip domain-lookup
+!
+!
+spanning-tree mode pvst
+spanning-tree extend system-id
+!
+interface FastEthernet0/1
+ description TRUNK to S1
+ switchport trunk native vlan 8
+ switchport trunk allowed vlan 3-4,8
+ switchport mode trunk
+!
+interface FastEthernet0/2
+ description FREE
+ switchport access vlan 7
+ switchport mode access
+ shutdown
+!
+interface FastEthernet0/3
+ description FREE
+ switchport access vlan 7
+ switchport mode access
+ shutdown
+!
+interface FastEthernet0/4
+ description FREE
+ switchport access vlan 7
+ switchport mode access
+ shutdown
+!
+interface FastEthernet0/5
+ description FREE
+ switchport access vlan 7
+ switchport mode access
+ shutdown
+!
+interface FastEthernet0/6
+ description FREE
+ switchport access vlan 7
+ switchport mode access
+ shutdown
+!
+interface FastEthernet0/7
+ description FREE
+ switchport access vlan 7
+ switchport mode access
+ shutdown
+!
+interface FastEthernet0/8
+ description FREE
+ switchport access vlan 7
+ switchport mode access
+ shutdown
+!
+interface FastEthernet0/9
+ description FREE
+ switchport access vlan 7
+ switchport mode access
+ shutdown
+!
+interface FastEthernet0/10
+ description FREE
+ switchport access vlan 7
+ switchport mode access
+ shutdown
+!
+interface FastEthernet0/11
+ description FREE
+ switchport access vlan 7
+ switchport mode access
+ shutdown
+!
+interface FastEthernet0/12
+ description FREE
+ switchport access vlan 7
+ switchport mode access
+ shutdown
+!
+interface FastEthernet0/13
+ description FREE
+ switchport access vlan 7
+ switchport mode access
+ shutdown
+!
+interface FastEthernet0/14
+ description FREE
+ switchport access vlan 7
+ switchport mode access
+ shutdown
+!
+interface FastEthernet0/15
+ description FREE
+ switchport access vlan 7
+ switchport mode access
+ shutdown
+!
+interface FastEthernet0/16
+ description FREE
+ switchport access vlan 7
+ switchport mode access
+ shutdown
+!
+interface FastEthernet0/17
+ description FREE
+ switchport access vlan 7
+ switchport mode access
+ shutdown
+!
+interface FastEthernet0/18
+ description FREE
+ switchport access vlan 7
+ switchport mode access
+ shutdown
+!
+interface FastEthernet0/19
+ description FREE
+ switchport access vlan 7
+ switchport mode access
+ shutdown
+!
+interface FastEthernet0/20
+ description to PC-B
+ switchport access vlan 4
+ switchport mode access
+!
+interface FastEthernet0/21
+ description FREE
+ switchport access vlan 7
+ switchport mode access
+ shutdown
+!
+interface FastEthernet0/22
+ description FREE
+ switchport access vlan 7
+ switchport mode access
+ shutdown
+!
+interface FastEthernet0/23
+ description FREE
+ switchport access vlan 7
+ switchport mode access
+ shutdown
+!
+interface FastEthernet0/24
+ description FREE
+ switchport access vlan 7
+ switchport mode access
+ shutdown
+!
+interface GigabitEthernet0/1
+ description FREE
+ switchport access vlan 7
+ switchport mode access
+ shutdown
+!
+interface GigabitEthernet0/2
+ description FREE
+ switchport access vlan 7
+ switchport mode access
+ shutdown
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+interface Vlan3
+ mac-address 0001.9721.7801
+ ip address 192.168.3.12 255.255.255.0
+!
+ip default-gateway 192.168.3.1
+!
+banner motd ^Clogin banner!^C
+!
+!
+!
+line con 0
+ password 7 0822455D0A16
+ login
+!
+line vty 0 4
+ password 7 0822455D0A16
+ login
+line vty 5 15
+ password 7 0822455D0A16
+ login
+!
+!
+!
+!
+end
+
+
+S2# 
