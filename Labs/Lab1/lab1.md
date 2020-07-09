@@ -1,7 +1,7 @@
 ## 2 - VLAN и маршрутизация между VLAN 
 ## Lab - Configure Router-on-a-Stick Inter-VLAN Routing
 
-### EVE-NG исполенение.
+### EVE-NG исполнение.
 
 #### Топология сети.
 ![](eve.png)
@@ -29,9 +29,9 @@
 |  8 | Native | нет | 
 
 #### Конфигурация устройств.
-[Конигурация R1](r1-eve.txt)
-[Конигурация S1](s1-eve.txt)
-[Конигурация S2](s2-eve.txt)
+[Конфигурация R1](r1-eve.txt)
+[Конфигурация S1](s1-eve.txt)
+[Конфигурация S2](s2-eve.txt)
 
 
 #### Проверка.
@@ -71,7 +71,7 @@ What intermediate IP addresses are shown in the results?
 ```
 
 
-### cisco packet tracer исполенение.
+### cisco packet tracer исполнение.
 
 #### Топология сети.
 ![](pt.png)
@@ -99,9 +99,9 @@ What intermediate IP addresses are shown in the results?
   8 | Native | нет 
 
 #### Конфигурация устройств.
-[Конигурация R1](r1-pt.txt)
-[Конигурация S1](s1-pt.txt)
-[Конигурация S2](s2-pt.txt)
+[Конфигурация R1](r1-pt.txt)
+[Конфигурация S1](s1-pt.txt)
+[Конфигурация S2](s2-pt.txt)
 
 
 #### Проверка.
