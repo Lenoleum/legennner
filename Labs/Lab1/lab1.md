@@ -4,7 +4,7 @@
 ### EVE-NG исполенение.
 
 #### Топология сети.
-![](eve.PNG)
+![](eve.png)
 
 #### Таблица адресов.
 
@@ -74,7 +74,7 @@ What intermediate IP addresses are shown in the results?
 ### cisco packet tracer исполенение.
 
 #### Топология сети.
-![](pt.PNG)
+![](pt.png)
 
 #### Таблица адресов.
 
