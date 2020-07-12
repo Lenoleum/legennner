@@ -1,0 +1,57 @@
+ 
+S2#sh spanning-tree | inc Et0 
+Et0/1               Root FWD 100       128.2    Shr 
+EEt0/3               Desg FWD 100       128.4    Shr 
+Et0/3               Desg FWD 100       128.4    Shr 
+S2#
+
+
+
+S3#sh spanning-tree | inc Et0
+Et0/1               Altn BLK 100       128.2    Shr 
+EEt0/3               Root FWD 100       128.4    Shr 
+Et0/3               Root FWD 100       128.4    Shr 
+S3#
+
+
+
+
+
+
+
+
+
+S2#sh spanning-tree | inc Et0
+Et0/1               Root FWD 100       128.2    Shr 
+EEt0/3               Altn BLK 100       128.4    Shr 
+Et0/3               Altn BLK 100       128.4    Shr 
+S2#
+
+
+S3#sh spanning-tree | inc Et0
+Et0/1               Desg BLK 100       128.2    Shr 
+EEt0/3               Root FWD 90        128.4    Shr 
+Et0/3               Root FWD 90        128.4    Shr 
+S3#
+
+
+
+
+
+
+
+
+S2#sh spanning-tree | inc Et0 
+Et0/1               Root FWD 100       128.2    Shr 
+EEt0/3               Desg FWD 100       128.4    Shr 
+Et0/3               Desg FWD 100       128.4    Shr 
+S2#
+
+
+S3#sh spanning-tree | inc Et0
+Et0/1               Altn BLK 100       128.2    Shr 
+EEt0/3               Root FWD 100       128.4    Shr 
+Et0/3               Root FWD 100       128.4    Shr 
+S3#
+
+

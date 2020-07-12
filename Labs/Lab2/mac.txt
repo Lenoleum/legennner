@@ -1,0 +1,27 @@
+S1#sh int | inc Hardware
+  Hardware is AmdP2, address is aabb.cc00.1000 (bia aabb.cc00.1000)
+  Hardware is AmdP2, address is aabb.cc00.1010 (bia aabb.cc00.1010)
+  Hardware is AmdP2, address is aabb.cc00.1020 (bia aabb.cc00.1020)
+  Hardware is AmdP2, address is aabb.cc00.1030 (bia aabb.cc00.1030)
+  Hardware is Ethernet SVI, address is aabb.cc80.1000 (bia aabb.cc80.1000)
+S1#
+
+
+
+S2#sh int | inc Hardware
+  Hardware is AmdP2, address is aabb.cc00.2000 (bia aabb.cc00.2000)
+  Hardware is AmdP2, address is aabb.cc00.2010 (bia aabb.cc00.2010)
+  Hardware is AmdP2, address is aabb.cc00.2020 (bia aabb.cc00.2020)
+  Hardware is AmdP2, address is aabb.cc00.2030 (bia aabb.cc00.2030)
+  Hardware is Ethernet SVI, address is aabb.cc80.2000 (bia aabb.cc80.2000)
+S2#
+
+
+
+S3#sh int | inc Hardware
+  Hardware is AmdP2, address is aabb.cc00.3000 (bia aabb.cc00.3000)
+  Hardware is AmdP2, address is aabb.cc00.3010 (bia aabb.cc00.3010)
+  Hardware is AmdP2, address is aabb.cc00.3020 (bia aabb.cc00.3020)
+  Hardware is AmdP2, address is aabb.cc00.3030 (bia aabb.cc00.3030)
+  Hardware is Ethernet SVI, address is aabb.cc80.3000 (bia aabb.cc80.3000)
+S3#
