@@ -195,6 +195,7 @@ S2(config-vlan)#name Management
 S2(config-vlan)#exit
 S2(config)#interface vlan 3
 S2(config-if)#ip address 192.168.3.12 255.255.255.0
+S2(config-if)#no shutdown
 S2(config-if)#exit
 S2(config)#ip default-gateway 192.168.3.1
 S2(config)#exit
