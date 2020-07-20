@@ -1,0 +1,21 @@
+PC-A#sh ipv6 int e1/1
+Ethernet1/1 is up, line protocol is up
+  IPv6 is enabled, link-local address is FE80::C803:7EFF:FED0:1D 
+  No Virtual link-local address(es):
+  Stateless address autoconfig enabled
+  Global unicast address(es):
+    2001:DB8:ACAD:1:C803:7EFF:FED0:1D, subnet is 2001:DB8:ACAD:1::/64 [EUI/CAL/PRE]
+      valid lifetime 2591976 preferred lifetime 604776
+  Joined group address(es):
+    FF02::1
+    FF02::1:FFD0:1D
+  MTU is 1500 bytes
+  ICMP error messages limited to one every 100 milliseconds
+  ICMP redirects are enabled
+  ICMP unreachables are sent
+  ND DAD is enabled, number of DAD attempts: 1
+  ND reachable time is 30000 milliseconds (using 30000)
+  ND NS retransmit interval is 1000 milliseconds
+  Default router is FE80::C801:73FF:FE36:1D on Ethernet1/1
+PC-A#show ipv6 dhcp int e1/1
+PC-A#
