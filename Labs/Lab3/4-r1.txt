@@ -1,0 +1,143 @@
+R1#sh run
+Building configuration...
+
+Current configuration : 1913 bytes
+!
+! Last configuration change at 14:54:23 UTC Mon Jul 20 2020
+!
+version 15.2
+service timestamps debug datetime msec
+service timestamps log datetime msec
+service password-encryption
+!
+hostname R1
+!
+boot-start-marker
+boot-end-marker
+!
+!
+enable secret 5 $1$yQrZ$BwIR2IY03a3LkLQovwqv./
+!
+no aaa new-model
+clock timezone UTC 3 0
+!
+!
+!
+ip dhcp excluded-address 192.168.1.1
+ip dhcp excluded-address 192.168.3.1
+ip dhcp excluded-address 192.168.3.2
+!
+ip dhcp pool NET-A
+ network 192.168.1.0 255.255.255.192
+ default-router 192.168.1.1 
+ dns-server 192.168.1.1 
+ domain-name NET-A
+ lease 3
+!
+ip dhcp pool NET-C
+ network 192.168.3.0 255.255.255.240
+ domain-name NET-C
+ dns-server 192.168.3.1 
+ default-router 192.168.3.1 
+ lease 3
+!
+!
+!
+no ip domain lookup
+ip cef
+no ipv6 cef
+!         
+!
+multilink bundle-name authenticated
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+! 
+!
+!
+!
+!
+!
+!
+!
+!         
+interface FastEthernet0/0
+ no ip address
+ shutdown
+ duplex full
+!
+interface Ethernet1/0
+ description TRUNK to R2
+ ip address 10.0.0.1 255.255.255.252
+ duplex full
+!
+interface Ethernet1/1
+ description TRUNK to S1
+ no ip address
+ duplex full
+!
+interface Ethernet1/1.100
+ description Clients R1
+ encapsulation dot1Q 100
+ ip address 192.168.1.1 255.255.255.192
+!
+interface Ethernet1/1.200
+ description Management
+ encapsulation dot1Q 200
+ ip address 192.168.2.1 255.255.255.224
+!
+interface Ethernet1/1.1000
+ description Native
+!
+interface Ethernet1/2
+ no ip address
+ shutdown
+ duplex full
+!
+interface Ethernet1/3
+ no ip address
+ shutdown
+ duplex full
+!
+ip forward-protocol nd
+!
+!
+no ip http server
+no ip http secure-server
+ip route 0.0.0.0 0.0.0.0 10.0.0.2
+!
+!         
+!
+!
+control-plane
+!
+banner login ^CCUnauthorized access to this device is prohibited!^C
+!
+line con 0
+ password 7 13061E010803
+ logging synchronous
+ login
+ stopbits 1
+line aux 0
+ stopbits 1
+line vty 0 4
+ password 7 0822455D0A164557524B4C
+ login
+line vty 5 15
+ password 7 14141B180F0B6A6B646873
+ login
+!
+!
+end
+          
+R1#
+ 

@@ -1,0 +1,114 @@
+R2#sh run
+Building configuration...
+
+Current configuration : 1280 bytes
+!
+! Last configuration change at 15:03:26 UTC Mon Jul 20 2020
+!
+version 15.2
+service timestamps debug datetime msec
+service timestamps log datetime msec
+service password-encryption
+!
+hostname R2
+!
+boot-start-marker
+boot-end-marker
+!
+!
+enable secret 5 $1$8WR/$itasB0OGZT0cm4BR/8dw/1
+!
+no aaa new-model
+clock timezone UTC 3 0
+!
+!
+!
+!         
+!
+!
+no ip domain lookup
+ip cef
+no ipv6 cef
+!
+!
+multilink bundle-name authenticated
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+! 
+!
+!         
+!
+!
+!
+!
+!
+!
+interface FastEthernet0/0
+ no ip address
+ shutdown
+ duplex full
+!
+interface Ethernet1/0
+ description to R1
+ ip address 10.0.0.2 255.255.255.252
+ duplex full
+!
+interface Ethernet1/1
+ description to S2
+ ip address 192.168.3.1 255.255.255.240
+ ip helper-address 10.0.0.1
+ duplex full
+!
+interface Ethernet1/2
+ no ip address
+ shutdown
+ duplex full
+!
+interface Ethernet1/3
+ no ip address
+ shutdown
+ duplex full
+!
+ip forward-protocol nd
+!
+!
+no ip http server
+no ip http secure-server
+ip route 0.0.0.0 0.0.0.0 10.0.0.1
+!
+!
+!
+!
+control-plane
+!
+banner login ^CCUnauthorized access to this device is prohibited!^C
+!         
+line con 0
+ password 7 094F471A1A0A
+ logging synchronous
+ login
+ stopbits 1
+line aux 0
+ stopbits 1
+line vty 0 4
+ password 7 060506324F414959455752
+ login
+line vty 5 15
+ password 7 05080F1C22430E49594557
+ login
+!
+!
+end
+
+R2#
+ 

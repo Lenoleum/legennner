@@ -1,0 +1,105 @@
+ 
+S2#sh run
+Building configuration...
+
+Current configuration : 1225 bytes
+!
+! Last configuration change at 19:08:39 UTC Mon Jul 20 2020
+!
+version 15.2
+service timestamps debug datetime msec
+service timestamps log datetime msec
+service password-encryption
+service compress-config
+!
+hostname S2
+!
+boot-start-marker
+boot-end-marker
+!
+!
+enable secret 5 $1$AzS6$qvP20EwQyHmAtRyA2sLDp.
+!
+no aaa new-model
+clock timezone UTC 3 0
+!
+!
+!         
+!
+!
+no ip routing
+!
+!
+!
+no ip domain-lookup
+no ip cef
+no ipv6 cef
+!
+!
+!
+spanning-tree mode rapid-pvst
+spanning-tree extend system-id
+!
+vlan internal allocation policy ascending
+!
+! 
+!
+!
+!
+!
+!         
+!
+!
+!
+!
+!
+!
+!
+interface Ethernet0/0
+!
+interface Ethernet0/1
+ description FREE
+ switchport access vlan 15
+ switchport mode access
+ shutdown
+!
+interface Ethernet0/2
+!
+interface Ethernet0/3
+ description FREE
+ switchport access vlan 15
+ switchport mode access
+ shutdown
+!         
+interface Vlan1
+ ip address 192.168.3.2 255.255.255.240
+ no ip route-cache
+!
+ip default-gateway 192.168.3.1
+ip forward-protocol nd
+!
+!
+no ip http server
+no ip http secure-server
+!
+!
+!
+!
+!
+control-plane
+!
+banner login ^CCUnauthorized access to this device is prohibited!^C
+!
+line con 0
+ password 7 045802150C2E
+ logging synchronous
+ login    
+line aux 0
+line vty 0 4
+ password 7 070C285F4D06594557524B
+ login
+!
+!
+end
+
+S2#
