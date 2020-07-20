@@ -16,16 +16,6 @@
 |  PC-B | NIC | DHCP | 
 
 
-#### Таблица VLAN.
-
-| VLAN | Имя | Интерфейс | 
-| --------| --------- | --------- | 
-|  1 | - | S2: e0/0 | 
-|  100 | Clients | S1: e0/3 | 
-|  200 | Management | S1: VLAN 200  | 
-|  999 | ParkingLot | S1: e0/0-1 | 
-|  1000 | Native | нет | 
-
 
 #### Конфигурация устройств. 
 [Конфигурация R1](6-r1.txt)  
@@ -133,6 +123,8 @@ interface Ethernet1/0
  ipv6 nd managed-config-flag
  ipv6 dhcp server R2-STATEFUL
 ```
+
+
 ##### Часть 5. Настройка релея.
 
 Пример кофнигурации порта.
@@ -155,7 +147,23 @@ PC-B(config-if)#ipv6 address ?
 
 PC-B(config-if)#ipv6 address 
 ```
+Для дополнительной проверки был сделан ещё один пул и назначен на порт R1 e1/3, результат тот же.
+```
+ipv6 dhcp pool STATEFUL
+ address prefix 2001:1111:1111:1111:AAA::/80
+ dns-server 2001:4860:4860::8888
+ domain-name NETWORKLESSONS.LOCAL
+```
 
 
+```
+interface Ethernet1/3
+ no ip address
+ duplex full
+ ipv6 address 2001:1111:1111:1111::1/64
+ ipv6 nd prefix 2001:1111:1111:1111::/64 14400 14400 no-autoconfig
+ ipv6 nd managed-config-flag
+ ipv6 dhcp server STATEFUL
+ ```
 
 
